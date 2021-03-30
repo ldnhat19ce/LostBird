@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <!--
+        Navigation graph là một biểu đồ cho biết được các
+       thành phần có trong ứng dụng của bạn được Navigation quản lý,
+       có các action và giao diện đầy đủ của các màn hình. Việc
+       này giúp cho ứng dụng của bạn dễ dàng quản lý follow
+       của từng màn hình và liên kết với nhau, nhìn qua là
+       có thể biết được các màn hình ra sao và chúng tương tác
+       với nhau như thế nào.
+     -->
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.ldnhat.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+</navigation>
