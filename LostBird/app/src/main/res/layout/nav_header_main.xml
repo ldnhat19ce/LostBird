@@ -14,16 +14,17 @@
     >
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imageView"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:contentDescription="@string/nav_header_desc"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:src="@drawable/sign"
-
-        />
+        android:id="@+id/imageView"
+        android:contentDescription="@string/nav_header_desc"
+        >
+    </de.hdodenhof.circleimageview.CircleImageView>
 
     <TextView
+        android:id="@+id/nav_username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"

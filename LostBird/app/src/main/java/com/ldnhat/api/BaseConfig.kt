@@ -9,9 +9,10 @@ class BaseConfig {
 
     fun getInstance() : Retrofit{
 
-        retrofit = Retrofit.Builder().baseUrl("http:/192.168.1.9:8080/DemoJson_war_exploded/api/")
+        retrofit = Retrofit.Builder().baseUrl("http://192.168.1.5:8080/LostBirdWebServer_war_exploded/api/")
             .addConverterFactory(GsonConverterFactory.create()).build()
 
         return retrofit
     }
+
 }

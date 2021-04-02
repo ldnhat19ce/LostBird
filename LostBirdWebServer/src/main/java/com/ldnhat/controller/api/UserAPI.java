@@ -25,15 +25,24 @@ public class UserAPI  extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        List<UserModel> users = userService.findAll();
         ObjectMapper objectMapper = new ObjectMapper();
-        String userJson = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(users);
 
-        PrintWriter out = response.getWriter();
-        response.setContentType("application/json");
+        response.setContentType("application/json;charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
-        out.println(userJson);
-        out.flush();
+
+        String message = request.getParameter("message");
+        String userId = request.getParameter("userId");
+        if(message != null && userId != null){
+            UserModel userModel = userService.findOne(Long.parseLong(userId));
+            objectMapper.writeValue(response.getOutputStream(), userModel);
+        }else{
+            List<UserModel> users = userService.findAll();
+            String userJson = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(users);
+
+            PrintWriter out = response.getWriter();
+            out.println(userJson);
+            out.flush();
+        }
     }
 
     @Override
@@ -48,11 +57,23 @@ public class UserAPI  extends HttpServlet {
             if(userService.findByUsernameAndEmail(userModel.getUsername(),
                     userModel.getEmail()) == null){
 
+                System.out.println(userModel.getEmail());
                 userModel = userService.save(userModel);
                 userModel.setMessage("REGISTER_ACCOUNT_SUCCESS");
                 objectMapper.writeValue(response.getOutputStream(), userModel);
             }else{
                 userModel.setMessage("REGISTER_NAME_OR_EMAIL_EXIS");
+                objectMapper.writeValue(response.getOutputStream(), userModel);
+            }
+        }else if(userModel.getMessage().equals("CLIENT_REQUIRED_AUTHORIZATION")){
+            if (userService.findByEmailAndPassword(userModel.getEmail(), userModel.getPassword()) != null){
+                System.out.println(userModel.getEmail());
+                userModel = userService.findByEmailAndPassword(userModel.getEmail(), userModel.getPassword());
+                userModel.setMessage("AUTHORIZATION_SUCCESSFUL");
+                objectMapper.writeValue(response.getOutputStream(), userModel);
+            }else{
+                userModel.setMessage("AUTHORIZATION_FAILED");
+                System.out.println(userModel.getEmail());
                 objectMapper.writeValue(response.getOutputStream(), userModel);
             }
         }

@@ -10,4 +10,5 @@ public interface IUserDAO extends GenericDAO<UserModel>{
     List<UserModel> findAll();
     Long save(UserModel userModel);
     UserModel findOne(Long id);
+    UserModel findByEmailAndPassword(String email, String password);
 }

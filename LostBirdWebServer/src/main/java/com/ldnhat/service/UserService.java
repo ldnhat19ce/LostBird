@@ -26,4 +26,12 @@ public class UserService {
         Long userId = userDAO.save(userModel);
         return userDAO.findOne(userId);
     }
+
+    public UserModel findByEmailAndPassword(String email, String password){
+        return userDAO.findByEmailAndPassword(email, password);
+    }
+
+    public UserModel findOne(Long id){
+        return userDAO.findOne(id);
+    }
 }
