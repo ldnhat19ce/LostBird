@@ -8,6 +8,6 @@ import retrofit2.http.Query
 interface APITweet{
 
     @GET("tweets")
-    fun tweet(@Query("userId") userId : Int, @Query("limit") limit : Int)
-        : Call<Tweet>
+    fun tweet(@Query("userId") userId : Int, @Query("message") message : String)
+        : Call<MutableList<Tweet>>
 }

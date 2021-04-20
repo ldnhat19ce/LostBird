@@ -1,5 +1,6 @@
 com\ldnhat\DAO\GenericDAO.class
 com\ldnhat\service\TweetService.class
+com\ldnhat\Utils\TimeAgo.class
 com\ldnhat\DAO\impl\TweetDAO.class
 com\ldnhat\model\Role.class
 com\ldnhat\model\RetweetModel.class

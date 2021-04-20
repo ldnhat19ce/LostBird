@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface ITweetDAO extends GenericDAO<TweetModel> {
 
-    List<TweetModel> tweet(int userId, int limit);
+    List<TweetModel> tweet(int userId);
 }

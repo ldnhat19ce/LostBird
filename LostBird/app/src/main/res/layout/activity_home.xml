@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/drawer_layout"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -9,24 +13,45 @@
     <!--
         thành phần con thứ 1 là giao diện, thứ 2 là tp của leftmenu
     -->
-    <androidx.drawerlayout.widget.DrawerLayout
+    <!-- thành phần con thứ nhất -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/drawer_layout"
-        android:fitsSystemWindows="true"
-        tools:openDrawer="start"
+        android:orientation="vertical"
         >
 
-        <!-- thành phần thứ nhất -->
-        <include
-            layout="@layout/toolbar_layout"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            />
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            />
+            android:orientation="vertical"
+            >
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                />
 
-        <!-- tp con thứ 2 nên dùng navigation view -->
-        <!-- layout_gravity="start" giúp neo layout
-         bên trái vào tp con thứ nhất -->
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_tab_layout"
+                android:scrollbars="vertical"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- tp con thứ 2 nên dùng navigation view -->
+    <!-- layout_gravity="start" giúp neo layout
+     bên trái vào tp con thứ nhất -->
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -37,5 +62,4 @@
         app:headerLayout="@layout/nav_header_main"
         />
 
-    </androidx.drawerlayout.widget.DrawerLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

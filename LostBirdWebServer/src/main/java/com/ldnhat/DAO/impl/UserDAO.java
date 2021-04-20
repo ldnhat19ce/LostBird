@@ -7,6 +7,7 @@ import com.ldnhat.model.UserModel;
 import java.util.List;
 
 public class UserDAO extends AbstractDAO<UserModel> implements IUserDAO {
+
     @Override
     public UserModel findByUsernameAndEmail(String username, String email) {
         StringBuilder sql = new StringBuilder("SELECT * FROM users u ");

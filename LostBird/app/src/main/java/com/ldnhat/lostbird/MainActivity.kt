@@ -24,6 +24,6 @@ class MainActivity : AppCompatActivity() {
         handler.postDelayed({
             var intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
-        }, 2000)
+        }, 1000)
     }
 }

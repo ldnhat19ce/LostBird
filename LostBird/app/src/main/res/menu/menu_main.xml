@@ -4,10 +4,6 @@
     >
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
-        <item
             android:id="@+id/nav_profile"
             android:title="@string/menu_profile"
             android:icon="@drawable/baseline_perm_identity_black_18dp"
@@ -27,6 +23,10 @@
             android:id="@+id/nav_setting"
             android:icon="@drawable/baseline_settings_black_18dp"
             android:title="@string/menu_setting" />
+        <item
+            android:id="@+id/logout"
+            android:title="@string/vi_logout"
+            />
 
     </group>
 </menu>

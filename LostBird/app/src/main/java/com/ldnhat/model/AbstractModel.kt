@@ -12,7 +12,7 @@ abstract class AbstractModel {
 
     @SerializedName("createDate")
     @Expose
-    var createDate:Timestamp? = null
+    var createDate:Long? = null
 
     @SerializedName("createBy")
     @Expose

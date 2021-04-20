@@ -3,7 +3,7 @@ package com.ldnhat.controller.api;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ldnhat.Utils.HttpUtil;
 import com.ldnhat.model.UserModel;
-import com.ldnhat.service.UserService;
+import com.ldnhat.service.impl.UserService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,6 +19,7 @@ public class UserAPI  extends HttpServlet {
     private UserService userService;
 
     public UserAPI() {
+
         userService = new UserService();
     }
 
