@@ -123,7 +123,7 @@
         android:drawableStart="@drawable/retweet"
         />
 
-    <ToggleButton
+    <CheckBox
         android:id="@+id/btn_like"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -134,10 +134,8 @@
         android:outlineSpotShadowColor="#FFF"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        android:textOn=""
-        android:textOff=""
+        android:button="@android:color/transparent"
         android:drawableStart="@drawable/custom_toggle_heart"
-        android:checked="false"
         />
 
     <ImageView
@@ -147,8 +145,9 @@
         app:layout_constraintTop_toBottomOf="@id/tweet_card_view"
         app:layout_constraintLeft_toRightOf="@id/btn_like"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="7dp"
         android:layout_marginBottom="5dp"
+        android:layout_marginStart="40dp"
         android:src="@drawable/share"
         />
 

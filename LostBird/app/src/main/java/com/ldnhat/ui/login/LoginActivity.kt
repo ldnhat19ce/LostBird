@@ -7,12 +7,14 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import com.ldnhat.api.BaseConfig
 import com.ldnhat.api.tweets.APITweet
 import com.ldnhat.api.users.APIUsers
 import com.ldnhat.lostbird.R
 import com.ldnhat.model.Users
 import com.ldnhat.ui.home.HomeActivity
+import com.ldnhat.utils.BaseUrl
 import kotlinx.android.synthetic.main.login_activity.*
 import kotlinx.android.synthetic.main.toolbar_register.*
 import retrofit2.Call
@@ -46,6 +48,7 @@ class LoginActivity : AppCompatActivity() {
                         val editor: SharedPreferences.Editor = saveAccountInformation.edit()
                         editor.putString("userId", userResponse?.id.toString())
                         editor.putString("roleId", userResponse?.role?.id.toString())
+                        editor.putString("profileImage", userResponse?.profileImage)
                         editor.apply()
 
                         val intent = Intent(this@LoginActivity, HomeActivity::class.java)

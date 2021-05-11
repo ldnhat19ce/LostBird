@@ -28,4 +28,11 @@
     <string name="register_vi">Đăng ký</string>
     <string name="ed_screen_name">screen name</string>
     <string name="vi_logout">Đăng xuất</string>
+    <string name="add_tweet_vi">Đăng Tweet</string>
+    <string name="menu_toolbar_icon">icon</string>
+    <string name="send_comment">send comment</string>
+    <string name="user_setting">setting</string>
+    <string name="setting_profile">Chỉnh sửa hồ sơ</string>
+    <string name="bio">Bio</string>
+    <string name="country">country</string>
 </resources>

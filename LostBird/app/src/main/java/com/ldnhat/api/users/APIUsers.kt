@@ -15,4 +15,7 @@ interface APIUsers {
     @GET("users")
     fun findOne(@Query("userId") userId : Int, @Query("message") message : String)
         : Call<Users>
+
+    @GET("users")
+    fun findAll(@Query("message") message : String) : Call<MutableList<Users>>
 }

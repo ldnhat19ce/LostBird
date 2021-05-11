@@ -8,10 +8,16 @@
     android:background="#e1e6ec"
    >
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_tweet"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/sw_refresh_home_tweet"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_tweet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
 
-        />
+            />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,14 +16,11 @@ class PageAdapter : FragmentStatePagerAdapter {
     }
 
     override fun getItem(position: Int): Fragment {
-        return fragments.get(position)
+        return fragments[position]
     }
 
     override fun getCount(): Int {
         return fragments.size
     }
 
-    override fun getPageTitle(position: Int): CharSequence? {
-        return super.getPageTitle(position)
-    }
 }

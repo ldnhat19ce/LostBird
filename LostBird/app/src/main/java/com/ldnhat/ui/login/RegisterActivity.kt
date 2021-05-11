@@ -2,6 +2,7 @@ package com.ldnhat.ui.login
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.InputFilter
@@ -15,6 +16,7 @@ import com.ldnhat.api.users.APIUsers
 import com.ldnhat.lostbird.R
 import com.ldnhat.model.Role
 import com.ldnhat.model.Users
+import com.ldnhat.ui.home.HomeActivity
 import com.ldnhat.utils.RegisterPattern
 import kotlinx.android.synthetic.main.login_activity.*
 import kotlinx.android.synthetic.main.register_activity.*
@@ -23,6 +25,7 @@ import kotlinx.android.synthetic.main.toolbar_register.toolbar_register
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.sql.Timestamp
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -45,8 +48,8 @@ class RegisterActivity : AppCompatActivity() {
                 val role = Role()
                 role.id = 2
                 user.role = role
-                user.profileImage = "http:/192.168.1.9:8080/DemoJson_war_exploded/image_user/sign.png"
-                user.profileCover = "http:/192.168.1.9:8080/DemoJson_war_exploded/image_user/profile_cover.jpg"
+                user.profileImage = "http:/192.168.1.6:8080/DemoJson_war_exploded/image_user/sign.png"
+                user.profileCover = "http:/192.168.1.6:8080/DemoJson_war_exploded/image_user/profile_cover.jpg"
                 user.following = 0
                 user.follower = 0
                 user.bio = ""
@@ -62,9 +65,11 @@ class RegisterActivity : AppCompatActivity() {
                             val editor:SharedPreferences.Editor = saveAccountInformation.edit()
                             editor.putString("userId", userResponse?.id.toString())
                             editor.putString("roleId", userResponse?.role?.id.toString())
+                            editor.putString("profileImage", userResponse?.profileImage)
                             editor.apply()
 
                             Toast.makeText(this@RegisterActivity, "Đăng ký thành công", Toast.LENGTH_SHORT).show()
+                            startActivity(Intent(this@RegisterActivity, HomeActivity::class.java))
                         }else if (userResponse?.message.equals("REGISTER_NAME_OR_EMAIL_EXIS")){
                             Toast.makeText(this@RegisterActivity, "tài khoản hoặc email đã được sử dụng", Toast.LENGTH_SHORT).show()
                         }
