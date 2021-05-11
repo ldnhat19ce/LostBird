@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">LostBird</string>
+    <string name="profile_item">Me</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">username</string>
+    <string name="nav_header_subtitle">screen_name</string>
+    <string name="nav_header_desc">something went wrong!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_profile">Hồ sơ</string>
+    <string name="menu_list">Danh sách</string>
+    <string name="menu_theme">Chủ đề</string>
+    <string name="menu_setting">Cài Đặt</string>
+    <string name="menu_text_following">10 đang theo dõi</string>
+    <string name="menu_text_follower">1 Người theo dõi</string>
+    <string name="btn_create_account">Tạo tài khoản</string>
+    <string name="txt_account">Bạn đã có tài khoản?</string>
+    <string name="login">Đăng nhập</string>
+    <string name="create_your_account">Tạo tài khoản của bạn</string>
+    <string name="register_name_vi">username</string>
+    <string name="login_lost_bird">Đăng nhập Lost Bird</string>
+    <string name="txt_enter_email">Nhập email</string>
+    <string name="txt_enter_password">Mật khẩu</string>
+    <string name="register_vi">Đăng ký</string>
+    <string name="ed_screen_name">screen name</string>
+    <string name="vi_logout">Đăng xuất</string>
+    <string name="add_tweet_vi">Đăng Tweet</string>
+    <string name="menu_toolbar_icon">icon</string>
+    <string name="send_comment">send comment</string>
+    <string name="user_setting">setting</string>
+    <string name="setting_profile">Chỉnh sửa hồ sơ</string>
+    <string name="bio">Bio</string>
+    <string name="country">country</string>
+</resources>
